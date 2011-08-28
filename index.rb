@@ -21,8 +21,11 @@ class Choice
   property :id,         Serial    
   property :name,       String    
   property :tables,     String  # comma separated string of table choices, ranking 1-9
+  property :choice,     Integer
   
 end
+
+#DataMapper.auto_migrate!
 
 #   Routes
 #----------------------------------------------------------------------------

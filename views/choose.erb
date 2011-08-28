@@ -1,65 +1,43 @@
-<h1>Choose your table!</h1>
+<div class="row">
+	<div class="span10 columns">
+		<form action="/choices">
+		   <fieldset>
+		    <legend>Choose your tables!</legend>
+		    <div class="clearfix">
+		      <label for="name">Your Name</label>
+		      <div class="input">
+		         <select id="normalSelect" name="name">
+							<option value=""></option>
+							<option value="Brett">Brett</option>
+							<option value="Calli">Calli</option>
+							<option value="Chika">Chika</option>
+						  <option value="Greg">Greg</option>
+							<option value="Molly">Molly</option>
+							<option value="Patrick">Patrick</option>
+							<option value="Patricia">Patricia</option>
+							<option value="Rune">Rune</option>
+							<option value="Zeven">Zeven</option>
+						</select>
+		      </div>
+		    </div>
 
-<form action="/choices">
-	
-	<p>
-		Your name:<br />
-		<select name="name">
-			<option value="Brett">Brett</option>
-			<option value="Calli">Calli</option>
-			<option value="Chika">Chika</option>
-		  <option value="Greg">Greg</option>
-			<option value="Molly">Molly</option>
-			<option value="Patrick">Patrick</option>
-			<option value="Patricia">Patricia</option>
-			<option value="Rune">Rune</option>
-			<option value="Zeven">Zeven</option>
-		</select>
-	</p>
-	
-	<p>
-		First choice:<br />
-		<%= dropdown "first_choice" %>
-	</p>
-	
-	<p>
-		Second choice:<br />
-		<%= dropdown "second_choice" %>
-	</p>
-	
-	<p>
-		Third choice:<br />
-		<%= dropdown "third_choice" %>
-	</p>
-	
-	<p>
-		Fourth choice:<br />
-		<%= dropdown "fourth_choice" %>
-	</p>
-	
-	<p>
-		Fifth choice:<br />
-		<%= dropdown "fifth_choice" %>
-	</p>
-	
-	<p>
-		Sixth choice:<br />
-		<%= dropdown "sixth_choice" %>
-	</p>
-	
-	<p>
-		Seventh choice:<br />
-		<%= dropdown "seventh_choice" %>
-	</p>
-	
-	<p>
-		Eighth choice:<br />
-		<%= dropdown "eighth_choice" %>
-	</p>
-	
-	<p>
-		Ninth choice:<br />
-		<%= dropdown "ninth_choice" %>
-	</p>
-	
-</form>
+				<%= dropdown "first_choice", "First Choice" %>
+				<%= dropdown "second_choice", "Second Choice" %>
+				<%= dropdown "third_choice", "Third Choice" %>
+				<%= dropdown "fourth_choice", "Fourth Choice" %>
+				<%= dropdown "fifth_choice", "Fifth Choice" %>
+				<%= dropdown "sixth_choice", "Sixth Choice" %>
+				<%= dropdown "seventh_choice", "Seventh Choice" %>
+				<%= dropdown "eighth_choice", "Eighth Choice" %>
+				<%= dropdown "ninth_choice", "Ninth Choice" %>
+
+		    <div class="actions">
+		      <button class="btn large primary" type="submit">Save</button>
+		    </div>
+		  </fieldset>
+		</form>
+	</div>
+	<div class="span6 columns">
+		Here
+	</div>
+</div>
