@@ -9,7 +9,7 @@ require 'helpers.rb'
 #   DB Setup
 #----------------------------------------------------------------------------
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || 'mysql://root@localhost/table_chooser')
+DataMapper.setup(:default, ENV['DATABASE_URL'] || 'mysql://root@localhost/itpresidents')
 
 #   Classes
 #----------------------------------------------------------------------------
@@ -84,7 +84,7 @@ class Choice
   
 end
 
-#DataMapper.auto_migrate!
+DataMapper.auto_migrate!
 
 #   Routes
 #----------------------------------------------------------------------------
@@ -107,7 +107,7 @@ get '/decide' do
     r.save
   end
   
-  remaining = Choice.assign_uniques(0)
+  Choice.assign_uniques(0)
   Choice.assign_next
   @residents = Choice.all
   erb :decide
