@@ -4,7 +4,7 @@
 require 'rubygems'
 require 'bundler'
 Bundler.require
-require 'helpers.rb'
+require './helpers'
 
 #   DB Setup
 #----------------------------------------------------------------------------
