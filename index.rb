@@ -84,7 +84,7 @@ class Choice
   
 end
 
-DataMapper.auto_migrate!
+#DataMapper.auto_migrate!
 
 #   Routes
 #----------------------------------------------------------------------------
