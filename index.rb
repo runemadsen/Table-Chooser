@@ -39,6 +39,18 @@ class Choice
     tables_array.find_index { |t| Choice.table_available?(t) }
   end
   
+  def self.assign_uniques(num)
+    self.all.select { |r| 
+      if r.choice_unique?(num)
+        r.choice = r.tables_array[num]
+        r.save
+        false
+      else
+        true
+      end
+    }
+  end
+  
   def self.assign_next
     if not Choice.first(:choice => nil).nil?
       lowest_choice = Choice.all(:choice => nil).map { |r| r.next_available }.min
@@ -70,18 +82,6 @@ class Choice
     ]
   end
   
-  def self.assign_uniques(num)
-    self.all.select { |r| 
-      if r.choice_unique?(num)
-        r.choice = r.tables_array[num]
-        r.save
-        false
-      else
-        true
-      end
-    }
-  end
-  
 end
 
 #DataMapper.auto_migrate!
@@ -97,6 +97,7 @@ post '/choices' do
   resident = Choice.first_or_create(:name => params[:name])
   resident.tables = params[:tables].join(",")
   resident.save
+  erb :saved
 end
 
 get '/decide' do
