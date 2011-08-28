@@ -1,6 +1,9 @@
 <div class="row">
-	<div class="span10 columns">
-		<form action="/choices">
+	<div class="span8 columns">
+		
+		<h1>Resident Table Chooser</h1>
+		
+		<form action="/choices" method="POST">
 		   <fieldset>
 		    <legend>Choose your tables!</legend>
 		    <div class="clearfix">
@@ -8,15 +11,9 @@
 		      <div class="input">
 		         <select id="normalSelect" name="name">
 							<option value=""></option>
-							<option value="Brett">Brett</option>
-							<option value="Calli">Calli</option>
-							<option value="Chika">Chika</option>
-						  <option value="Greg">Greg</option>
-							<option value="Molly">Molly</option>
-							<option value="Patrick">Patrick</option>
-							<option value="Patricia">Patricia</option>
-							<option value="Rune">Rune</option>
-							<option value="Zeven">Zeven</option>
+							<% Choice.names.each do |name| %>
+								<option value="<%= name %>"><%= name %></option>
+							<% end %>
 						</select>
 		      </div>
 		    </div>
@@ -37,7 +34,7 @@
 		  </fieldset>
 		</form>
 	</div>
-	<div class="span6 columns">
-		Here
+	<div class="span8 columns">
+		
 	</div>
 </div>

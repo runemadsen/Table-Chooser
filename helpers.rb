@@ -4,7 +4,7 @@ helpers do
     "<div class='clearfix'>
       <label for='#{select_name}'>#{label_name}</label>
       <div class='input'>
-         <select name='#{select_name}'>
+         <select name='tables[]'>
        		<option value='1'>Table 1</option>
      			<option value='2'>Table 2</option>
      			<option value='3'>Table 3</option>
